@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Talisker 10Yr",
+        "price": 89.99,
+        "imgUrl": "/images/Talisker.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Dalwhinnie 15Yr",
+        "price": 84.99,
+        "imgUrl": "/images/Dalwhnnie.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Dalmore",
+        "price": 100.99,
+        "imgUrl": "/images/dalmore.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Johnie Walker Blue",
+        "price": 250.99,
+        "imgUrl": "/images/Johnnie-walker-blue-label.jpg"
+    }
+]
