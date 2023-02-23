@@ -1,7 +1,7 @@
 import { Form, Button } from "react-bootstrap"
 import { SyntheticEvent, useState } from "react"
 import FormContainer from "../components/FormContainer"
-import {About} from "./About"
+
 
 async function loginUser(credentials: any) {
   return fetch('http://localhost:8080/login', {
@@ -20,9 +20,14 @@ export function LoginPage() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
-    const handleSubmit = (event) => {
-      event.preventDefault()
-    }
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      try {
+        await auth.signInWithEmailAndPassword(username, password);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
     return (
     <FormContainer>
@@ -32,7 +37,7 @@ export function LoginPage() {
         <Form.Label>User Name</Form.Label>
         <Form.Control type="text" placeholder="Enter User Name" 
         value={username}
-        onChange={e => setUsername(e.target.value)}
+        onChange={(event) => setUsername(event.target.value)}
         />
       </Form.Group>
 
@@ -40,7 +45,7 @@ export function LoginPage() {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" 
         value={password}
-        onChange={e => setPassword(e.target.value)}
+        onChange={(event) => setPassword(event.target.value)}
         />
       </Form.Group>
 
@@ -51,3 +56,4 @@ export function LoginPage() {
     </FormContainer>
     )
 }
+
